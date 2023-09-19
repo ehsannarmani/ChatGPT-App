@@ -93,10 +93,11 @@ fun HomeScreen(
     }) { paddings ->
         Column(
             modifier = Modifier
-                .padding(paddings)
                 .fillMaxSize()
+                .padding(paddings),
+            verticalArrangement = Arrangement.Bottom
         ) {
-            LazyColumn(modifier = Modifier.weight(.89f)) {
+            LazyColumn() {
                 items(messages) { message ->
                     Message(message)
                 }
@@ -108,9 +109,8 @@ fun HomeScreen(
             }
             Row(
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxWidth()
                     .padding(10.dp)
-                    .weight(.11f)
                     .clip(RoundedCornerShape(8.dp))
                     .background(White200)
                     .padding(end = 10.dp),
